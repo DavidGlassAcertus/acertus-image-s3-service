@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "a1a797ff-1b11-458f-984a-fde397c56c1e",
+		"name": "Acertus-Image-S3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get File Resize to 100px",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"asset\": \"mynewasset.jpg\",\r\n    \"folder\": \"12456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}?maxSize=1000",
+					"host": [
+						"{{HOST}}"
+					],
+					"query": [
+						{
+							"key": "maxSize",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get File Original Size",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"asset\": \"mynewasset.jpg\",\r\n    \"folder\": \"12456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}?asset=mynewasset.jpg&folder=12456",
+					"host": [
+						"{{HOST}}"
+					],
+					"query": [
+						{
+							"key": "asset",
+							"value": "mynewasset.jpg"
+						},
+						{
+							"key": "folder",
+							"value": "12456"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "asset",
+							"value": "mynewasset.jpg",
+							"type": "text"
+						},
+						{
+							"key": "folder",
+							"value": "12456",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/19546/Downloads/Screenshot_1 (1).jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}",
+					"host": [
+						"{{HOST}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
